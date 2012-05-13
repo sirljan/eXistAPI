@@ -9,6 +9,7 @@ require 'collection'
 #You can insert, replace, rename and delete nodes or change values.
 #To query use xQuery or xPath.
 #
+#
 # ==== Examples
 #db = ExistAPI.new("http://localhost:8080/exist/xmlrpc", "admin", "admin")
 #puts db.existscollection?("db")

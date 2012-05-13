@@ -57,8 +57,6 @@
   
     <li class="file"><a href="./nbproject/private/rake-d_txt.html">rake-d</a>
   
-    <li class="file"><a href="./r_rdoc.html">r</a>
-  
   </ul>
 </nav>
 
@@ -85,9 +83,30 @@
 
 <div id="documentation" class="description">
   
-<h2 id="label-eXistAPI">eXistAPI</h2>
+<h1 id="label-ExistAPI+-+eXist-db+communication+client+">ExistAPI - eXist-db communication client </h1>
+<dl class="rdoc-list note-list"><dt>rubygem 
+<dd>
+<p><a href="https://rubygems.org/gems/eXistAPI">rubygems.org/gems/eXistAPI</a></p>
+</dd><dt>github 
+<dd>
+<p><a
+href="https://github.com/sirljan/eXistAPI">github.com/sirljan/eXistAPI</a></p>
+</dd></dl>
 
-<p>You should document your project here.</p>
+<h2 id="label-Description">Description</h2>
+
+<p><a href="ExistAPI.html">ExistAPI</a> is comunication interface to eXist-db
+based on XML-RPC. With eXistAPI  you are able to create, delete or get
+collections or retrieve whole content of  documents or part of it by
+querying.  Also with eXistAPI you can work with documents stored in
+eXist-db.  You can insert, replace, rename and delete nodes or change
+values.</p>
+
+<h2 id="label-Using+eXistAPI+example">Using eXistAPI example</h2>
+
+<p>api = <a href="ExistAPI.html#method-c-new">ExistAPI.new</a>("<a
+href="http://localhost:8080/exist/xmlrpc">localhost:8080/exist/xmlrpc</a>",
+"username", "password") puts api.existscollection?("db/collection")</p>
 
 </div>
 

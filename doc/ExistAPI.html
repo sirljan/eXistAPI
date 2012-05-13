@@ -117,8 +117,6 @@
   
     <li class="file"><a href="./nbproject/private/rake-d_txt.html">rake-d</a>
   
-    <li class="file"><a href="./r_rdoc.html">r</a>
-  
   </ul>
 </nav>
 
@@ -148,12 +146,12 @@
 
   <div id="description" class="description">
     
-<p><a href="ExistAPI.html">ExistAPI</a> is comunication interface based on
-XML-RPC. With eXistAPI you are able  to create, delete or get collections
-or retrieve whole content of documents or  part of it by querying.  Also
-with eXistAPI you can work with documents stored in eXist-db.  You can
-insert, replace, rename and delete nodes or change values. To query use
-xQuery or xPath.</p>
+<p><a href="ExistAPI.html">ExistAPI</a> is comunication interface to eXist-db
+based on XML-RPC. With eXistAPI  you are able to create, delete or get
+collections or retrieve whole content of  documents or part of it by
+querying.  Also with eXistAPI you can work with documents stored in
+eXist-db.  You can insert, replace, rename and delete nodes or change
+values. To query use xQuery or xPath.</p>
 
 <pre>==== Examples</pre>
 
@@ -210,7 +208,7 @@ href="http://localhost:8080/exist/xmlrpc">localhost:8080/exist/xmlrpc</a>",
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 30</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 31</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span> , <span class="ruby-identifier">username</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">password</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-ivar">@uri</span> = <span class="ruby-identifier">uri</span>
   <span class="ruby-ivar">@username</span> = <span class="ruby-identifier">username</span>
@@ -257,7 +255,7 @@ href="http://localhost:8080/exist/xmlrpc">localhost:8080/exist/xmlrpc</a>",
 
           
           <div class="method-source-code" id="createcollection-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 91</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 92</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">createcollection</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">parent_col</span> = <span class="ruby-keyword">nil</span>)
   <span class="ruby-identifier">name</span> = <span class="ruby-identifier">check_slashes</span>(<span class="ruby-identifier">name</span>)
   <span class="ruby-keyword">if</span> (<span class="ruby-identifier">parent_col</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
@@ -316,7 +314,7 @@ protected :</p>
 
           
           <div class="method-source-code" id="execute_query-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 230</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 231</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">execute_query</span>(<span class="ruby-identifier">xquery</span>, <span class="ruby-identifier">parameters</span> = <span class="ruby-ivar">@parameters</span>)
   <span class="ruby-comment">#puts xquery</span>
   <span class="ruby-keyword">begin</span>
@@ -361,7 +359,7 @@ protected :</p>
 
           
           <div class="method-source-code" id="existscollection-3F-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 137</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 138</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">existscollection?</span>(<span class="ruby-identifier">orig_path</span>)
   <span class="ruby-identifier">orig_path</span> = <span class="ruby-identifier">check_slashes</span>(<span class="ruby-identifier">orig_path</span>)
   <span class="ruby-identifier">collections</span> = <span class="ruby-identifier">orig_path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)
@@ -426,7 +424,7 @@ gethits(handle_id)</p>
 
           
           <div class="method-source-code" id="get_hits-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 275</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 276</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">get_hits</span>(<span class="ruby-identifier">handle</span>)
   <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">summary</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-string">&quot;querySummary&quot;</span>, <span class="ruby-identifier">handle</span>)
@@ -472,7 +470,7 @@ gethits(handle_id)</p>
 
           
           <div class="method-source-code" id="getcollection-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 120</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 121</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">getcollection</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">path</span> = <span class="ruby-identifier">check_slashes</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">col</span> = <span class="ruby-constant">Collection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@client</span>, <span class="ruby-identifier">path</span>)
@@ -513,7 +511,7 @@ gethits(handle_id)</p>
 
           
           <div class="method-source-code" id="remove_collection-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 178</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 179</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_collection</span>(<span class="ruby-identifier">path</span>)
   <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-string">&quot;removeCollection&quot;</span>, <span class="ruby-identifier">path</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
@@ -559,7 +557,7 @@ result-set, which is passed in the parameter pos.</p>
 
           
           <div class="method-source-code" id="retrieve-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 254</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 255</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">retrieve</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">pos</span>)
   <span class="ruby-keyword">begin</span>
     <span class="ruby-identifier">res</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">call</span>(<span class="ruby-string">&quot;retrieve&quot;</span>, <span class="ruby-identifier">handle</span>, <span class="ruby-identifier">pos</span>, <span class="ruby-ivar">@parameters</span>)
@@ -607,7 +605,7 @@ or replace an existing one:</p>
 
           
           <div class="method-source-code" id="storeresource-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 199</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 200</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">storeresource</span>(<span class="ruby-identifier">_res</span>, <span class="ruby-identifier">_docname</span>, <span class="ruby-identifier">_overwrite</span> = <span class="ruby-value">1</span>)
   <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">_res</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)<span class="ruby-operator">||</span>(<span class="ruby-identifier">_docname</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>))
     <span class="ruby-identifier">raise</span> <span class="ruby-constant">ExistException</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Resource or document name is nil&quot;</span>, <span class="ruby-value">4</span>), <span class="ruby-identifier">caller</span>
@@ -655,7 +653,7 @@ or replace an existing one:</p>
 
           
           <div class="method-source-code" id="update_delete-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 362</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 363</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_delete</span>(<span class="ruby-identifier">expr</span>)
   <span class="ruby-identifier">query</span> = <span class="ruby-string">&quot;update delete &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expr</span>
   <span class="ruby-comment">#puts &quot;query #{query}&quot;</span>
@@ -705,7 +703,7 @@ by  the keywords "into", "following" or "preceding":</p>
 
           
           <div class="method-source-code" id="update_insert-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 305</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 306</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_insert</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">pos</span>, <span class="ruby-identifier">expr_single</span>) 
   <span class="ruby-identifier">query</span> = <span class="ruby-string">&quot;update insert &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">expr</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">pos</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">expr_single</span>
   <span class="ruby-comment">#puts &quot;query #{query}&quot;</span>
@@ -749,7 +747,7 @@ elements or attributes.</p>
 
           
           <div class="method-source-code" id="update_rename-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 382</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 383</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_rename</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">expr_single</span>)
   <span class="ruby-identifier">query</span> = <span class="ruby-string">&quot;update rename &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expr</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; as &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expr_single</span>
   <span class="ruby-comment">#puts &quot;query #{query}&quot;</span>
@@ -795,7 +793,7 @@ to the concatenated string values of all nodes in exprSingle.</p>
 
           
           <div class="method-source-code" id="update_replace-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 327</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 328</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_replace</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">expr_single</span>)
   <span class="ruby-identifier">query</span> = <span class="ruby-string">&quot;update replace &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">expr</span><span class="ruby-operator">+</span><span class="ruby-string">&quot; with &quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">expr_single</span>
   <span class="ruby-identifier">execute_query</span>(<span class="ruby-identifier">query</span>)
@@ -838,7 +836,7 @@ concatenated string value of all items in exprSingle.</p>
 
           
           <div class="method-source-code" id="update_value-source">
-            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 346</span>
+            <pre><span class="ruby-comment"># File lib/eXistAPI.rb, line 347</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_value</span>(<span class="ruby-identifier">expr</span>, <span class="ruby-identifier">expr_single</span>)
   <span class="ruby-identifier">query</span> = <span class="ruby-string">&quot;update replace &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expr</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot; with &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">expr_single</span>
   <span class="ruby-identifier">execute_query</span>(<span class="ruby-identifier">query</span>)
